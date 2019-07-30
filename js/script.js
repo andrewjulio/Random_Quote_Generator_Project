@@ -80,7 +80,6 @@ const quotes = [
   }
 ];
 
-
 /***
   Create the `getRandomQuote` function to:
    - Create a variable to store a random number 
@@ -106,26 +105,57 @@ function getRandomQuote() {
 ***/
 
 function printQuote() {
-    let quote = getRandomQuote();
-    let htmlString = "";
+  let quote = getRandomQuote();
+  let htmlString = "";
 
-    htmlString += "<p class='quote'>" + quote.quote + "</p><br>";
-    htmlString += "<p class='source'>" + quote.source;
+  htmlString += "<p class='quote'>" + quote.quote + "</p><br>";
+  htmlString += "<p class='source'>" + quote.source;
 
-    if(quote.citation != "") {
-      htmlString += "<span class='citation'>" + quote.citation + "</span>";
-    } else if (quote.year != "") {
-        htmlString += "<span class = 'year'>" + quote.year + "</span>";
-    } else if (quote.russian != "") {
+  if(quote.citation != "") {
+    htmlString += "<span class='citation'>" + quote.citation + "</span>";
+    if (quote.year != "") {
+      htmlString += "<span class = 'year'>" + quote.year + "</span>";
+      if (quote.russian != "") {
         htmlString += "<br><br><br><br><br><br>";
         htmlString += "<span class = 'russian'><b>In Russian: " + quote.russian + "</b></span>";
-    } else if(quote.used != "") {
-        htmlString += "<br><br>";}
-        htmlString += "<span class = 'used'><b>When it is used?:</b><br>" + quote.used + "</span>";
-    } else if(quote.popular != "") {
-              htmlString += "<br><br>";
-              htmlString += "<span class = 'popular'><b>Why so popular?:</b><br>" + quote.popular + "</span>";
+        if (quote.used != "") {
+          htmlString += "<br><br>";
+          htmlString += "<span class = 'used'><b>When it is used?:</b><br>" + quote.used + "</span>";
+          if (quote.popular != "") {
+            htmlString += "<br><br>";
+            htmlString += "<span class = 'popular'><b>Why so popular?:</b><br>" + quote.popular + "</span>";
+          }
+        }
+      }
     }
+  } else if (quote.year != "") {
+
+      htmlString += "<span class = 'year'>" + quote.year + "</span>";
+      if (quote.russian != "") {
+        htmlString += "<br><br><br><br><br><br>";
+        htmlString += "<span class = 'russian'><b>In Russian: " + quote.russian + "</b></span>";
+        if (quote.used != "") {
+          htmlString += "<br><br>";
+          htmlString += "<span class = 'used'><b>When it is used?:</b><br>" + quote.used + "</span>";
+          if (quote.popular != "") {
+            htmlString += "<br><br>";
+            htmlString += "<span class = 'popular'><b>Why so popular?:</b><br>" + quote.popular + "</span>";
+            }
+          }
+        }
+      } else if (quote.russian != "") {
+        htmlString += "<br><br><br><br><br><br>";
+        htmlString += "<span class = 'russian'><b>In Russian: " + quote.russian + "</b></span>";
+        if (quote.used != "") {
+          htmlString += "<br><br>";
+          htmlString += "<span class = 'used'><b>When it is used?:</b><br>" + quote.used + "</span>";
+          if (quote.popular != "") {
+            htmlString += "<br><br>";
+            htmlString += "<span class = 'popular'><b>Why so popular?:</b><br>" + quote.popular + "</span>";
+          }
+        }
+      }
+    
     htmlString += "</p>";
     document.getElementById('quote-box').innerHTML = htmlString;
 };
