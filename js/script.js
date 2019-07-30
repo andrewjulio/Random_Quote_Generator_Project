@@ -83,11 +83,11 @@ function getRandomQuote() {
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
-let quote = getRandomQuote();
-console.log(quote.citation);
 
-function printQuote(quote) {
+function printQuote() {
+    let quote = getRandomQuote();
     let htmlString = "";
+    console.log(quote + htmlString);
     htmlString += "<p class='quote'>" + quote.quote + "</p><br>";
     htmlString += "<p class='source'>" + quote.source;
 
@@ -99,9 +99,8 @@ function printQuote(quote) {
     };
     htmlString += "</p>";
     document.getElementById('quote-box').innerHTML = htmlString;
-    return htmlString;
 };
-console.log(printQuote(quote));
+printQuote();
 
 
 /***
