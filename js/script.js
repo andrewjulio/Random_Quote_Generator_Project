@@ -83,7 +83,7 @@ function getRandomQuote() {
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
-const quote = getRandomQuote();
+let quote = getRandomQuote();
 console.log(quote.citation);
 
 function printQuote(quote) {
@@ -98,6 +98,7 @@ function printQuote(quote) {
       };
     };
     htmlString += "</p>";
+    document.getElementById('quote-box').innerHTML = htmlString;
     return htmlString;
 };
 console.log(printQuote(quote));
