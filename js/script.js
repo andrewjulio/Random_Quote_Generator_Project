@@ -107,6 +107,7 @@ function getRandomQuote() {
 function printQuote() {
   let quote = getRandomQuote();
   let htmlString = "";
+  let htmlString2 = "";
 
   htmlString += "<p class='quote'>" + quote.quote + "</p><br>";
   htmlString += "<p class='source'>" + quote.source;
@@ -115,7 +116,7 @@ function printQuote() {
     htmlString += "<span class='citation'>" + quote.citation + "</span>";
     if (quote.year != "") {
       htmlString += "<span class = 'year'>" + quote.year + "</span>";
-      if (quote.russian != "") {
+      /*** if (quote.russian != "") {
         htmlString += "<br><br><br><br><br><br>";
         htmlString += "<span class = 'russian'><b>In Russian: " + quote.russian + "</b></span>";
         if (quote.used != "") {
@@ -126,38 +127,38 @@ function printQuote() {
             htmlString += "<span class = 'popular'><b>Why so popular?:</b><br>" + quote.popular + "</span>";
           }
         }
-      }
+      }***/
     }
-  } else if (quote.year != "") {
-
-      htmlString += "<span class = 'year'>" + quote.year + "</span>";
+  } 
+  
       if (quote.russian != "") {
-        htmlString += "<br><br><br><br><br><br>";
-        htmlString += "<span class = 'russian'><b>In Russian: " + quote.russian + "</b></span>";
+        htmlString2 += "<br><br><br><br><br><br>";
+        htmlString2 += "<span class = 'russian'><b>In Russian: " + quote.russian + "</b></span>";
         if (quote.used != "") {
-          htmlString += "<br><br>";
-          htmlString += "<span class = 'used'><b>When it is used?:</b><br>" + quote.used + "</span>";
+          htmlString2 += "<br><br>";
+          htmlString2 += "<span class = 'used'><b>When it is used?:</b><br>" + quote.used + "</span>";
           if (quote.popular != "") {
-            htmlString += "<br><br>";
-            htmlString += "<span class = 'popular'><b>Why so popular?:</b><br>" + quote.popular + "</span>";
+            htmlString2 += "<br><br>";
+            htmlString2 += "<span class = 'popular'><b>Why so popular?:</b><br>" + quote.popular + "</span>";
             }
           }
-        }
+      }/***
       } else if (quote.russian != "") {
-        htmlString += "<br><br><br><br><br><br>";
-        htmlString += "<span class = 'russian'><b>In Russian: " + quote.russian + "</b></span>";
+        htmlString2 += "<p><br><br><br><br><br><br>";
+        htmlString2 += "<span class = 'russian'><b>In Russian: " + quote.russian + "</b></span>";
         if (quote.used != "") {
-          htmlString += "<br><br>";
-          htmlString += "<span class = 'used'><b>When it is used?:</b><br>" + quote.used + "</span>";
+          htmlString2 += "<br><br>";
+          htmlString2 += "<span class = 'used'><b>When it is used?:</b><br>" + quote.used + "</span>";
           if (quote.popular != "") {
-            htmlString += "<br><br>";
-            htmlString += "<span class = 'popular'><b>Why so popular?:</b><br>" + quote.popular + "</span>";
+            htmlString2 += "<br><br>";
+            htmlString2 += "<span class = 'popular'><b>Why so popular?:</b><br>" + quote.popular + "</span>";
           }
-        }
-      }
+        }***/
     
     htmlString += "</p>";
+    htmlString2 += "</p>";
     document.getElementById('quote-box').innerHTML = htmlString;
+    document.getElementById('quote-box2').innerHTML = htmlString2;
 };
 printQuote();
 

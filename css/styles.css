@@ -15,9 +15,19 @@ body {
   left: 10%;
   right: 10%;
   width: 80%;
+  bottom: 60%;
   line-height: .5;
 }
 
+#quote-box2 {
+  position: absolute;
+  bottom: 25%;
+  top: 40%;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  line-height: .5;
+}
 .quote {
   font-size: 2.5rem;
   font-weight: 400;
@@ -69,6 +79,30 @@ body {
 .year:before {
   content: ", ";
   font-style: normal;
+}
+
+.russian {
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-align: left;
+  margin-right: 4em;
+}
+
+.used {
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-align: left;
+  margin-right: 4em;
+}
+
+.popular {
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-align: left;
+  margin-right: 4em;
 }
 
 #loadQuote {
