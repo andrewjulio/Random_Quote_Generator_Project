@@ -146,6 +146,13 @@ printQuote();
   function. So do not make any changes to the line of code below this 
   comment.
 ***/
+let timer;
+
+function myTimer() {
+  timer = setInterval(printQuote, 5000);
+}
+
+myTimer()
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
