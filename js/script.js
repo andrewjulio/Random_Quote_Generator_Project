@@ -56,7 +56,7 @@ const quotes = [
     source: "Fyodor Dostoevsky (1821–1881)",
     citation: "Crime and Punishment",
     year: 1866,
-    russian: "When a person finally dares to do something they were frightened of or reluctant of doing for a long time.",
+    russian: "'Тварь я дрожащая или право имею?'",
     used: "When a person finally dares to do something they were frightened of or reluctant of doing for a long time.",
     popular: "In <i>Crime and Punishment</i>, Rodion Raskolnikov speaks these words in an attempt to justify his murder of the old pawnbroker woman, who, according to Raskolnikov, is “a louse, a useless, loathsome, harmful creature” sucking money and life from her debtors."
   },
@@ -65,7 +65,7 @@ const quotes = [
     source: "Nikolay Gogol (1809-1852)",
     citation: "Taras Bulba",
     year: 1835,
-    russian: "'Тварь я дрожащая или право имею?'",
+    russian: "'Есть еще порох в пороховницах!'",
     used: "When a person finally dares to do something they were frightened of or reluctant of doing for a long time.",
     popular: "One of the most uplifting quotes, this one is also perceived as a proverb. But initially, these are the words of Taras Bulba, the old Cossack who asks his fellows if they’re ready to fight, and they answer: “There is yet powder in the flasks, father; the Cossack force is not weakened yet: the Cossacks yield not!” After this, a fierce battle ensues… This quote sure carries a combatant mood many Russians love to entertain."
   },
@@ -120,20 +120,20 @@ function printQuote() {
   } 
 
   if (quote.russian != "") {
-    htmlString2 += "<br><br><br><br><br><br>";
-    htmlString2 += "<span class = 'russian'><b>In Russian: " + quote.russian + "</b></span>";
+    htmlString2 += "<p class = 'russian'><b>In Russian: " + quote.russian + "</b></p>";
       if (quote.used != "") {
-        htmlString2 += "<br><br>";
-        htmlString2 += "<span class = 'used'><b>When it is used?:</b><br>" + quote.used + "</span>";
+        htmlString2 += "<br>";
+        htmlString2 += "<p class = 'used'><b>When it is used?:</b><br><br>" + quote.used + "</p>";
           if (quote.popular != "") {
-            htmlString2 += "<br><br>";
-            htmlString2 += "<span class = 'popular'><b>Why so popular?:</b><br>" + quote.popular + "</span>";
+            htmlString2 += "<br>";
+            htmlString2 += "<p class = 'popular'><b>Why so popular?:</b><br><br>" + quote.popular + "</p>";
           }
       }
   }
     
   htmlString += "</p>";
   htmlString2 += "</p>";
+  
   document.getElementById('quote-box').innerHTML = htmlString;
   document.getElementById('quote-box2').innerHTML = htmlString2;
 };

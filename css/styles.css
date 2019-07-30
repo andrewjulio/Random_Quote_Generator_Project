@@ -15,14 +15,14 @@ body {
   left: 10%;
   right: 10%;
   width: 80%;
-  bottom: 60%;
+  bottom: 10%;
   line-height: .5;
 }
 
 #quote-box2 {
   position: absolute;
   bottom: 25%;
-  top: 40%;
+  top: 45%;
   left: 10%;
   right: 10%;
   width: 80%;
@@ -82,11 +82,10 @@ body {
 }
 
 .russian {
-  font-size: 1rem;
+  font-size: 1.1rem;
   letter-spacing: 0.05em;
   line-height: 1.1;
   text-align: left;
-  margin-right: 4em;
 }
 
 .used {
@@ -94,7 +93,6 @@ body {
   letter-spacing: 0.05em;
   line-height: 1.1;
   text-align: left;
-  margin-right: 4em;
 }
 
 .popular {
@@ -102,7 +100,6 @@ body {
   letter-spacing: 0.05em;
   line-height: 1.1;
   text-align: left;
-  margin-right: 4em;
 }
 
 #loadQuote {
