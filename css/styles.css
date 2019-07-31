@@ -102,13 +102,36 @@ body {
   text-align: left;
 }
 
+#stayQuote {
+  position: fixed;
+  width: 12em;
+  display: inline-block;
+  left: 50%;
+  margin-left: -6em;
+  bottom: 160px;
+  border-radius: 4px;
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: #36b55c;
+  padding: 15px 0;
+  transition: .5s ;
+}
+
+#stayQuote:hover {
+  background-color: rgba(255,255,255,.25);
+}
+
+#stayQuote:focus {
+  outline: none;
+}
+
 #loadQuote {
   position: fixed;
   width: 12em;
   display: inline-block;
   left: 50%;
   margin-left: -6em;
-  bottom: 150px;
+  bottom: 100px;
   border-radius: 4px;
   border: 2px solid #fff;
   color: #fff;
@@ -121,6 +144,28 @@ body {
 }
 
 #loadQuote:focus {
+  outline: none;
+}
+
+#continueQuote {
+  position: fixed;
+  width: 12em;
+  display: inline-block;
+  left: 50%;
+  margin-left: -6em;
+  bottom: 40px;
+  border-radius: 4px;
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: #36b55c;
+  padding: 15px 0;
+  transition: .5s ;
+}
+#continueQuote:hover {
+  background-color: rgba(255,255,255,.25);
+}
+
+#continueQuote:focus {
   outline: none;
 }
 

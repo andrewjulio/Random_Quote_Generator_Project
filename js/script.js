@@ -5,15 +5,7 @@ project 1 - A Random Quote Generator
 
 // Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
 
-
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
-***/
+// Create array of quote objects with various properties - Source: https://www.rbth.com/arts/329726-7-russian-quotes-proverbs
 const quotes = [
   {
     quote: "‘My uncle, what a worthy man…’",
@@ -80,38 +72,26 @@ const quotes = [
   }
 ];
 
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
+console.log(quotes);
+
+// Function to randomly return a quote object from the 'quotes' array of objects
 function getRandomQuote() {
     let randomNumber = Math.floor(Math.random() * quotes.length);
     return(quotes[randomNumber]);
 };
 
-
-/***
-  Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote variable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
-
+// Function calling the 'getRandomQuote' function and initiating necessary variables
 function printQuote() {
   let quote = getRandomQuote();
   let htmlString = "";
   let htmlString2 = "";
 
+  // Concatenating the HTML components
   htmlString += "<p class='quote'>" + quote.quote + "</p><br>";
   htmlString += "<p class='source'>" + quote.source;
 
+  // Checking that the Quote object contains a 'citation' and 'year' property,
+  // and if so then this shall be concatenated to the HTML string as this will go into the 'quote-box' div element.
   if(quote.citation != "") {
     htmlString += "<span class='citation'>" + quote.citation + "</span>";
     if (quote.year != "") {
@@ -119,24 +99,30 @@ function printQuote() {
     }
   } 
 
+  // Checking that the Quote object contains the 'russian', 'used' and 'popular' properties,
+  // which are then concatenated to the HTML2 string as this will go into the 'quote-box2' div element.
   if (quote.russian != "") {
     htmlString2 += "<p class = 'russian'><b>In Russian: " + quote.russian + "</b></p>";
       if (quote.used != "") {
         htmlString2 += "<br>";
-        htmlString2 += "<p class = 'used'><b>When it is used?:</b><br><br>" + quote.used + "</p>";
+        htmlString2 += "<p class = 'used'><b>When it is used?</b><br><br>" + quote.used + "</p>";
           if (quote.popular != "") {
             htmlString2 += "<br>";
-            htmlString2 += "<p class = 'popular'><b>Why so popular?:</b><br><br>" + quote.popular + "</p>";
+            htmlString2 += "<p class = 'popular'><b>Why so popular?</b><br><br>" + quote.popular + "</p>";
           }
       }
   }
-    
+  
+  // Closing the tags respectively for each html string
   htmlString += "</p>";
   htmlString2 += "</p>";
   
+  // Setting the 'innerHTML' of the 'quote-box' and 'quote-box2' div to the respective HTML strings.
   document.getElementById('quote-box').innerHTML = htmlString;
   document.getElementById('quote-box2').innerHTML = htmlString2;
 };
+
+// Initialising the function.
 printQuote();
 
 
@@ -146,15 +132,25 @@ printQuote();
   function. So do not make any changes to the line of code below this 
   comment.
 ***/
+
+
+// Initialising 'timer' variable as necessary before creating the function that will allow the quotes to change randomly every 5 secs.
 let timer;
 
 function myTimer() {
   timer = setInterval(printQuote, 5000);
 }
 
-myTimer()
+// Initialising function.
+myTimer();
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+// Function to stop the timer to allow users to stay on a certain quote.
+function timerStop() {
+  clearInterval(timer);
+}
 
+// Invoking the 'printQuote' function and the timer interval when clicking the "Show another quote" button.
+document.getElementById('loadQuote').addEventListener("click", printQuote && myTimer, false);
 
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
+// Invoking the 'timerStop' function and stopping the timer interval when clicking the "Stay on this Quote" button.
+document.getElementById('stayQuote').addEventListener("click", timerStop, false);
