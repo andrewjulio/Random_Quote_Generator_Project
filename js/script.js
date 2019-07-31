@@ -138,7 +138,7 @@ printQuote();
 let timer;
 
 function myTimer() {
-  timer = setInterval(printQuote, 5000);
+  timer = setInterval(printQuote, 4500);
 }
 
 // Initialising function.
